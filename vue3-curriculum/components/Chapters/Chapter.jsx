@@ -13,8 +13,8 @@ const Chapter = (props) => {
             </Link>
             <div className='tag_wrapper'>
               {tags.map((tag, index) => (
-                <Link href={`/posts/tag/${tag}/page/1`} className='tag_anchor'>
-                  <span className='tag_container' key={index}>{tag}</span>
+                <Link href={`/posts/tag/${tag}/page/1`} className='tag_anchor' key={index}>
+                  <span className='tag_container'>{tag}</span>
                 </Link>
               ))}
             </div>

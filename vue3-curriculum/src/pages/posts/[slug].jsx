@@ -39,15 +39,15 @@ const Post = ({ post }) => {
       <span className={styles.date}>Posted date at {post.metadata.date}</span>
       <br />
       {post.metadata.tags.map((tag, index) => (
-        <Link href={`/posts/tag/${tag}/page/1`} className={styles.tag_anchor}>
-            <p className={styles.tag} key={index}>
+        <Link href={`/posts/tag/${tag}/page/1`} className={styles.tag_anchor} key={index}>
+            <p className={styles.tag}>
               {tag}
             </p>
           </Link>
       ))}
       <div className={styles.description}>
         <Markdown
-          children={post.markdown.parent}
+          // children={post.markdown.parent}
           components={{
             code(props) {
               const {children, className, node, ...rest} = props
@@ -55,11 +55,11 @@ const Post = ({ post }) => {
               return match ? (
                 <SyntaxHighlighter
                   {...rest}
-                  children={String(children).replace(/\n$/, '')}
+                  // children={String(children).replace(/\n$/, '')}
                   style={vscDarkPlus}
                   language={match[1]}
                   PreTag="div"
-                />
+                >{String(children).replace(/\n$/, '')}</SyntaxHighlighter>
               ) : (
                 <code {...rest} className={className}>
                   {children}
@@ -67,7 +67,7 @@ const Post = ({ post }) => {
               )
             }
           }}
-        ></Markdown>
+        >{post.markdown.parent}</Markdown>
       </div>
     </section>
   )
