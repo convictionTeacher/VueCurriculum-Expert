@@ -1,0 +1,30 @@
+.tags_container {
+  width: min(500px, 100%);
+  margin-inline: auto;
+}
+
+.tags_ttl {
+  color: #0f2350;
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.tags_list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.tags_label {
+  cursor: pointer;
+  padding: 4px 8px;
+  display: inline-block;
+  font-size: 16px;
+  color: #0f2350;
+  border: 1px solid #0f2350;
+  border-radius: 5px;
+}
+
+.tags_label:hover {
+  background-color: #e4e4e4;
+}
