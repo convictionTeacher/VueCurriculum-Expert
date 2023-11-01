@@ -3,14 +3,14 @@ import { NotionToMarkdown } from "notion-to-md";
 import { NUMBER_OF_POSTS_PER_PAGE } from "../constants/constants";
 
 const notion = new Client({
-  auth: process.env.NOTION_TOKEN_FOR_BROWSER,
+  auth: process.env.NEXT_PUBLIC_NOTION_TOKEN,
 });
 
 const n2m = new NotionToMarkdown({ notionClient: notion });
 
 export const getAllPosts = async () => {
   const posts = await notion.databases.query({
-    database_id: process.env.NOTION_DATABASE_ID_FOR_BROWSER,
+    database_id: process.env.NEXT_PUBLIC_NOTION_DATABASE_ID,
     page_size: 100,
     filter: {
       property: "Published",
@@ -54,7 +54,7 @@ const getPageMetaData = (post) => {
 
 export const getSinglePost = async (slug) => {
   const response = await notion.databases.query({
-    database_id: process.env.NOTION_DATABASE_ID_FOR_BROWSER,
+    database_id: process.env.NEXT_PUBLIC_NOTION_DATABASE_ID,
     filter: {
       property: "Slug",
       formula: {
