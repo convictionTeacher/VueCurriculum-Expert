@@ -9,6 +9,29 @@ body {
   background-color: #f3f3f3;
 }
 
+p > a {
+  margin-inline: 4px;
+}
+
+p > strong {
+  margin-inline: 4px;
+}
+
+pre {
+  margin-block: 0 32px;
+}
+
+blockquote {
+  border-left: 3px solid currentColor;
+  border-radius: 3px;
+  background-color: #eee;
+}
+
+blockquote > p {
+  padding-left: 16px;
+  padding-block: 8px;
+}
+
 .container {
   padding: 40px 32px;
 }
@@ -25,6 +48,35 @@ body {
   font-weight: bold;
   color: #0f2350;
   margin-bottom: 48px;
+}
+
+.pages_about {
+  color: #0f2350;
+  font-size: 24px;
+}
+
+.pages_about > .tag {
+  font-size: 28px;
+  margin-inline: 4px;
+}
+
+.list_top {
+  color: #0f2350;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.list_top:hover {
+  text-decoration: underline;
+}
+
+.pages_contents {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: min(800px, 100%);
+  margin-inline: auto;
+  margin-bottom: 32px;
 }
 
 .chapter_cards {

@@ -1,6 +1,7 @@
 .wrapper {
   margin-inline: auto;
   padding: 20px 40px;
+  max-width: 1000px;
 }
 
 .text_container {
@@ -15,10 +16,6 @@
 h1.text_container {
   font-size: 40px;
   white-space: nowrap;
-}
-
-.text_bg {
-  background-color: #eee;
 }
 
 .text_anchor {
@@ -45,13 +42,13 @@ h1.text_container {
   font-size: 16px;
   font-weight: bold;
   display: inline-block;
-  margin: 16px;
 }
 
 .tag_anchor {
   display: inline-block;
   border-radius: 9999px;
   margin-right: 8px;
+  margin-block: 16px;
 }
 
 .description {
@@ -60,12 +57,16 @@ h1.text_container {
 }
 
 .description p {
-  margin-bottom: 48px;
+  margin-bottom: 32px;
 }
 
 .description h2 {
   font-size: 30px;
   margin-bottom: 24px;
+}
+
+.description h2:first-child {
+  margin-block: 32px 24px;
 }
 
 .description h3 {

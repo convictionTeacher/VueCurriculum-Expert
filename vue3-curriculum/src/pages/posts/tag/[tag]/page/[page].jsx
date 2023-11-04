@@ -3,6 +3,7 @@ import Chapter from '../../../../../../components/Chapters/Chapter';
 import Pagination from '../../../../../../components/Pagination/Pagination';
 import Tag from '../../../../../../components/Tag/Tag';
 import { getAllPosts, getAllTags, getNumberOfPages, getNumberOfPagesByTag, getPostsByPage, getPostsByTagAndPage, getPostsTopPage } from '../../../../../../lib/notionAPI';
+import Link from 'next/link';
 
 export const getStaticPaths = async () => {
   const allTags = await getAllTags();
@@ -18,7 +19,6 @@ export const getStaticPaths = async () => {
       });
     })
   );
-
 
   return {
     paths: params,
@@ -60,7 +60,13 @@ const CurriculumTagPageList = ({ numberOfPagesByTag, posts, currentTag, allTags 
       </Head>
 
       <main className='container'>
-        <h1 className='common_pageTitle'>VueCurriculum-Expert</h1>
+        <Link href='/' className='home_link'>
+          <h1 className='common_pageTitle'>VueCurriculum-Expert</h1>
+        </Link>
+        <div className='pages_contents'>
+          <h2 className='pages_about'>"<span className='tag'>{currentTag}</span>" タグ一覧</h2>
+          <Link href='/posts/page/1' className='list_top'>カリキュラムトップへ戻る</Link>
+        </div>
         {posts.map((post) => (
           <div key={post.id}>
             <Chapter
