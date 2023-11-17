@@ -28,8 +28,8 @@ blockquote {
 }
 
 blockquote > p {
-  padding-left: 16px;
-  padding-block: 8px;
+  padding: .8em 1.6em;
+  color: #626063;
 }
 
 .container {
