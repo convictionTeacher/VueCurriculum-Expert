@@ -31,13 +31,14 @@ export const getStaticProps = async (context) => {
     props: {
       postsByPage,
       numberOfPage,
-      allTags
+      allTags,
+      currentPage
     },
     revalidate: 60 * 60 * 12,
   }
 }
 
-const CurriculumPageList = ({ postsByPage, numberOfPage, allTags }) => {
+const CurriculumPageList = ({ postsByPage, numberOfPage, allTags, currentPage }) => {
   return (
     <>
       <Head>
@@ -63,7 +64,7 @@ const CurriculumPageList = ({ postsByPage, numberOfPage, allTags }) => {
             />
           </div>
         ))}
-        <Pagination numberOfPage={numberOfPage} tag={""} />
+        <Pagination numberOfPage={numberOfPage} currentPage={currentPage} tag={""} />
         <Tag tags={allTags} />
       </main>
     </>

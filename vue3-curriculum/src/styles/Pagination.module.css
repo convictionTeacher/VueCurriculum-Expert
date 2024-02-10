@@ -39,3 +39,7 @@
 .Pagination_number > a:hover {
   background-color: #e4e4e4;
 }
+
+.Pagination_number.Pagination_current > a {
+  background-color: #e4e4e4;
+}

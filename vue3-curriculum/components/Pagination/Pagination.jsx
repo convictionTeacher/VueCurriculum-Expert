@@ -4,7 +4,7 @@ import styles from '@/styles/Pagination.module.css'
 import { getPageLink } from '../../lib/helper';
 
 const Pagination = ( props ) => {
-  const { numberOfPage, tag } = props;
+  const { numberOfPage, tag, currentPage } = props;
 
   let pages = [];
   for (let i = 1; i <= numberOfPage; i++) {
@@ -15,7 +15,7 @@ const Pagination = ( props ) => {
     <section className={styles.Pagination_container}>
       <ul className={styles.Pagination_lists}>
         {pages.map((page) => (
-          <li className={styles.Pagination_number} key={page}>
+          <li className={`${styles.Pagination_number} ${Number(currentPage) === page ? styles.Pagination_current : ""}`} key={page}>
             <Link href={getPageLink(tag, page)}>{page}</Link>
           </li>
         ))}
